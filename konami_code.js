@@ -9,9 +9,10 @@ function init() {
     // var pgh = document.createElement('p');
     // pgh.appendChild(document.createTextNode(e.which));
     // body.appendChild(pgh);
-   if (e.which === code[i]){
+    const key = parseInt(e.detail || e.which);
+   if (key === code[i]){
      count+=1;
-     if (count === 10){
+     if (count === (code.length-1)){
        alert("You've cracked the code!");
      }
      i+=1;
