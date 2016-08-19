@@ -4,14 +4,14 @@ function init() {
 
   var index = 0
 
-  function keydownEventHandler(event) {
-    var key = parseInt(event.which || event.which)
+  document.body.addEventListener('keydown', function(event) {
+    var key = parseInt(event.which || event.detail)
 
     if (key === code[index] ) {
       index++
 
       if (index === code.length - 1) {
-        window.alert('You did it!')
+        alert('You did it!')
         index = 0
       }
 
@@ -19,7 +19,5 @@ function init() {
       index = 0
     }
 
-  }
-
-  document.body.addEventListener('keydown', keydownEventHandler)
+  })
 }
