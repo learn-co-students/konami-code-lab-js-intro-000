@@ -1,5 +1,23 @@
 const code = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65]
 
+function init() {
+  var index = 0;
+  document.body.addEventListener("keydown", function(e) {
+    if(parseInt(e.which || e.detail) === code[index]) {
+      index++;
+      if(index === code.length) {
+        index = 0;
+        window.alert("congratulations!");
+      }
+    } else {
+      index = 0;
+    }
+  });
+}
+
+init();
+
+/*
 var index = 0;
 
 function init(e) {
@@ -13,6 +31,7 @@ function init(e) {
     index = 0;
   }
 }
+*/
 
 /*
 //define a function that checks whether user's inputs match the konami_code
@@ -38,11 +57,11 @@ function init(e) {
 */
 
 //invoke init function when any key pressed
-document.body.addEventListener("keydown", init);
+// document.body.addEventListener("keydown", init);
 
 document.body.addEventListener("keydown", function(e){
   console.log(e.which);
-  console.log(index);
+  // console.log(index);
 });
 
 //below is to check whether the eventlister works
