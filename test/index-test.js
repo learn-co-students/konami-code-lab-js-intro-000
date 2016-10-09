@@ -17,6 +17,8 @@ describe('index', () => {
     )
 
     document.body.dispatchEvent(keyboardEvent)
+    
+    //console.log(which)
   }
 
   describe('Konami code', () => {
@@ -27,6 +29,8 @@ describe('index', () => {
 
       for (let i = 0, l = code.length; i < l; i++) {
         triggerKeyDown(code[i])
+
+
       }
 
       expect(window.alert).toHaveBeenCalled()
@@ -39,6 +43,7 @@ describe('index', () => {
 
       for (let i = 0, l = code.length; i < l; i++) {
         triggerKeyDown(i)
+
       }
 
       expect(window.alert).toNotHaveBeenCalled()
