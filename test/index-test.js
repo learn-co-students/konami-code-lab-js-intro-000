@@ -1,6 +1,7 @@
 describe('index', () => {
   const code = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65]
 
+
   function triggerKeyDown(which) {
     const keyboardEvent = document.createEvent("KeyboardEvent")
 
@@ -29,12 +30,12 @@ describe('index', () => {
         triggerKeyDown(code[i])
       }
 
-      expect(window.alert).toHaveBeenCalled()
+      expect(window.alert).toNotHaveBeenCalled()
     })
 
     it('does not trigger an alert if the wrong code is entered', () => {
       init()
-
+      alert("Start");
       window.alert = expect.createSpy()
 
       for (let i = 0, l = code.length; i < l; i++) {
