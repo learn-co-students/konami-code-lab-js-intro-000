@@ -4,20 +4,11 @@ describe('index', () => {
 
   function triggerKeyDown(which) {
     const keyboardEvent = document.createEvent("KeyboardEvent")
+    var event = document.createEvent('Event');
+    event.initEvent('keydown', true, true);
+    event.keyCode = which;
 
-    keyboardEvent.initKeyboardEvent(
-      'keydown',
-      true,
-      true,
-      window,
-      which,
-      which,
-      0,
-      null,
-      null
-    )
-
-    document.body.dispatchEvent(keyboardEvent)
+        document.body.dispatchEvent(event)
   }
 
   describe('Konami code', () => {
@@ -30,7 +21,7 @@ describe('index', () => {
         triggerKeyDown(code[i])
       }
 
-      expect(window.alert).toNotHaveBeenCalled()
+      expect(window.alert).toHaveBeenCalled()
     })
 
     it('does not trigger an alert if the wrong code is entered', () => {
@@ -42,7 +33,7 @@ describe('index', () => {
         triggerKeyDown(i)
       }
 
-      expect(window.alert).toHaveBeenCalled()
+      expect(window.alert).toNotHaveBeenCalled()
     })
   })
 })
