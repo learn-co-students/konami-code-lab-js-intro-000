@@ -11,15 +11,16 @@ function init() {
   body.addEventListener('keydown',
 
   function onKeyDownHandler(e) {
-  	console.log(e.detail || e.which);
+
   	const key = parseInt(e.detail || e.which);
+  	console.log(key);
 
   	if (key === code[index]){
   		index++;
 
-  		if (index === code.length -1){
-  			alert("YOU KONAMIED IT");
-  			INDEX = 0;
+  		if (index === code.length){
+  			alert("YOU DID IT!");
+  			index = 0;
   		}
   	}else{
   		index = 0;
