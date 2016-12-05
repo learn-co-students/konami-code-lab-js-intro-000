@@ -5,11 +5,12 @@ function init() {
   var index = 0;
   document.addEventListener('keydown', function (e) {
     let keyPressed = parseInt(e.which || e.detail)
-    if(keyPressed === code[index]){
+    if(keyPressed === code[index]) {
       index++
 
       if(index === code.length - 1) {
         alert("You now have infinite lives!!!")
+        index = 0
       }
     } else {
       index = 0
