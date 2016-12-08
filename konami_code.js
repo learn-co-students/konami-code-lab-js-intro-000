@@ -6,20 +6,19 @@ function init() {
 }
 
 function checkCode(e) {
-  const keyWhich = e.which;
-  const keyDetail = e.detail;
+  const key = parseInt(e.which || e.detail);
   const nextKey = code[nextPosition];
 
-  if (keyWhich == nextKey || keyDetail == nextKey) {
+  if (key === nextKey) {
     nextPosition += 1
 
     if (nextPosition == code.length) {
-      removeListener();
       alert("Winner!");
+      resetCode();
     }
 
   } else {
-    nextPosition = 0;
+    resetCode();
   }
 }
 
@@ -27,5 +26,8 @@ function removeListener() {
   document.removeEventListener('keydown', checkCode);
 }
 
+function resetCode() {
+  nextPosition = 0;
+}
 
 init()
