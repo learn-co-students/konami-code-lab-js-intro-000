@@ -5,7 +5,7 @@ function init() {
   var index = 0;
 
   document.body.addEventListener('keydown', function(event) {
-  	var key = parseInt(event.which || event.keyCode || event.charCode || event.detail );
+  	var key = parseInt(event.which || event.keyCode || event.charCode || event.detail, 10 );
 
  	if (code[index] === key) {
 
