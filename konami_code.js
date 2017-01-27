@@ -9,9 +9,8 @@ function init() {
     if (code[index] === key) {
       index++
 
-      if (index === code.length - 1) {
-        alert('hurray!')
-
+      if (index === code.length) {
+        alert('You are a SUPERMAN!')
         index = 0
       }
     } else {
