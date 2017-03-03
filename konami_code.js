@@ -21,4 +21,5 @@ document.body.addEventListener('keydown', keyCode); //set the listener. when key
 }
 /*also passes test when
 if (index === code.length) {
-but since index starts at 0 and length starts at 1, it should be code.length-1*/
+but since index starts at 0 and length starts at 1, it should be code.length-1
+got help from the repositories*/
