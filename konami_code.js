@@ -7,7 +7,7 @@ function init() {
     for (var i = 0; i < code.length; i++) {
       if (key === code[i] ) {
         index++
-          alert("You DID IT!");
+          alert("YOU DID IT!");
       }
       else {
         index = 0;
