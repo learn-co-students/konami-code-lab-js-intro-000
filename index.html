@@ -1,19 +1,19 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Konami Code Lab</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="node_modules/mocha/mocha.css" />
-  </head>
+const code = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65]
 
-  <body>
-    <script src="konami_code.js"></script>
-    <!-- Open this file in the browser and call `mocha.run()` in console to run tests -->
-    <div id="mocha"></div>
-    <script src="node_modules/mocha/mocha.js"></script>
-    <script src="node_modules/expect/umd/expect.min.js"></script>
-    <script>mocha.setup('bdd');</script>
-    <script src="test/index-test.js"></script>
-  </body>
-</html>
+function init() {
+  // your code here
+  var progress = 0 // track user's progress through code outside loop scope
+  document.body.addEventListener('keydown',function(e) {
+    //e.stopPropagation()
+    const key = parseInt(e.detail || e.which)
+    if (key === code[progress]) {
+      progress++
+      if (progress === code.length - 1) {
+      alert("YOU DID IT!")
+      progress = 0  //reset counter
+    }
+  } else {
+    progress = 0 // start over if mistake is made
+  }
+})
+}
