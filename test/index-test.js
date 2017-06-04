@@ -1,47 +1,21 @@
-describe('index', () => {
-  const code = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65]
+const code = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65]
 
-  function triggerKeyDown(which) {
-    const keyboardEvent = document.createEvent("KeyboardEvent")
+function init() {
+  var index = 0
 
-    keyboardEvent.initKeyboardEvent(
-      'keydown',
-      true,
-      true,
-      window,
-      which,
-      which,
-      0,
-      null,
-      null
-    )
+  document.body.addEventListener('keydown', function(e) {
+    const key = parseInt(e.which || e.detail)
 
-    document.body.dispatchEvent(keyboardEvent)
-  }
+    if (code[index] === key) {
+      index++
 
-  describe('Konami code', () => {
-    it('triggers an alert if the right code is entered', () => {
-      init()
+      if (index === code.length - 1) {
+        alert('hurray!')
 
-      window.alert = expect.createSpy()
-
-      for (let i = 0, l = code.length; i < l; i++) {
-        triggerKeyDown(code[i])
+        index = 0
       }
-
-      expect(window.alert).toHaveBeenCalled()
-    })
-
-    it('does not trigger an alert if the wrong code is entered', () => {
-      init()
-
-      window.alert = expect.createSpy()
-
-      for (let i = 0, l = code.length; i < l; i++) {
-        triggerKeyDown(i)
-      }
-
-      expect(window.alert).toNotHaveBeenCalled()
-    })
+    } else {
+      index = 0
+    }
   })
-})
+}
