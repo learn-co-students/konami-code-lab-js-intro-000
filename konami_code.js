@@ -4,7 +4,7 @@ var keystrokes = []
 
 function init() {
   document.body.addEventListener('keydown', function(o){
-    keystrokes.push.parseInt(o.detail || o.which)
+    keystrokes.push(parseInt(o.detail || o.which))
     if (keystrokes == code) {
       alert("That's the code! Congrats")}
   })
