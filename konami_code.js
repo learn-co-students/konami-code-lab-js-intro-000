@@ -2,14 +2,14 @@ const code = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
 
 
 
-function init(e) {
-  document.body.addEventListener("keydown",function(){
+function init() {
+  document.body.addEventListener("keydown",function(event) {
 
   let index = 0;
 
 // This is the function that would be invoked by the event listener.
 
-  const key = parseInt(e.detail);
+  const key = parseInt(event.detail);
 
 
   if (key === code[index])
@@ -27,3 +27,5 @@ function init(e) {
   }
 };
 }
+
+init();
