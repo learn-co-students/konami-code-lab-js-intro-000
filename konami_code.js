@@ -1,5 +1,34 @@
 const code = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65]
 
 function init() {
-  // your code here
+  let index = 0;
+
+  document.querySelector('body').addEventListener('keydown', function( e ) {
+      const key = parseInt(e.detail || e.which);
+      if ( key === code[index]) {
+        index++;
+        if ( index === code.length) {
+          alert('Here is your Ester Egg! -> _(~)_')
+          index = 0;
+        }
+      } else {
+        index = 0;
+      }
+  });
 }
+
+
+
+// function onKeydownHandler( key ) {
+//   if ( key.which || key.detail == code[index]) {
+//     index++
+//     if ( index == code.length) {
+//       alert('Here is your Ester Egg! -> _(~)_')
+//     }
+//
+//   } else {
+//     index = 0;
+//   }
+//
+//
+// }
