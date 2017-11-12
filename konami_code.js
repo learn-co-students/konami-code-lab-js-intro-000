@@ -19,7 +19,7 @@ function init() {
       }
   }
   else {
-    alert("WRONG");
+    // alert("WRONG");
     index = 0;  //restart
   }
 });
