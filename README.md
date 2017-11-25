@@ -12,6 +12,20 @@ const code = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65]
 
 function init() {
   // your code here
+  let konami = 0;
+  while (konami < 10) {
+    konami = 0;
+    for (let i = 0; i < code.length; i++) {
+      let keypress = document.body.addEventListener("keydown", e => {
+        if (e.key == code[i]) {
+          konami++;
+        } else {
+          break
+        }
+      })
+    }
+  }
+  if (konami) alert("NICE!")
 }
 ```
 
