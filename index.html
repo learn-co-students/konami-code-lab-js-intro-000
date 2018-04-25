@@ -8,7 +8,21 @@
   </head>
 
   <body>
+    <div class="showkey" style="height: 60vh; display: flex; justify-content: center; align-items: center;font-size: 120px">
+      Hello
+    </div>
+    <div class="codeshow" style="font-size: 20px">
+      <center>Code: <br>
+      <input style ="width: 328px; font-size: 20px" value="38, 38, 40, 40, 37, 39, 37, 39, 66, 65" readonly></center>
+    </div>
+    <script>var body = document.querySelector('body');
+      body.onkeydown = function (e) {
+      document.querySelector('.showkey').innerHTML = e.keyCode;}
+    </script>
+
     <script src="konami_code.js"></script>
+    <script>init();</script>
+
     <!-- Open this file in the browser and call `mocha.run()` in console to run tests -->
     <div id="mocha"></div>
     <script src="node_modules/mocha/mocha.js"></script>
