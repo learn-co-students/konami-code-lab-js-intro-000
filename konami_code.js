@@ -1,23 +1,26 @@
-const code = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
-let count = 0;
-
-function getKey(e) {
-  const key = parseInt(e.which || e.detail);
-  if (key === code[count]) {
-    count += 1;
-
-    if (count === code.length) {
-      alert('yay');
-      count = 0;
-    }
-  } else {
-    count = 0;
-  }
-}
+const codes = [
+  'ArrowUp',
+  'ArrowUp',
+  'ArrowDown',
+  'ArrowDown',
+  'ArrowLeft',
+  'ArrowRight',
+  'ArrowLeft',
+  'ArrowRight',
+  'b',
+  'a',
+];
 
 function init() {
-  const body = document.querySelector('body');
-  body.addEventListener('keydown', getKey);
+  let index = 0;
+  document.body.addEventListener('keydown', (e) => {
+    if (e.key === codes[index]) {
+      index += 1;
+    } else {
+      index = 0;
+    }
+    if (index === codes.length) {
+      alert('code entered!');
+    }
+  });
 }
-
-init();
