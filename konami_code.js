@@ -29,6 +29,6 @@ function init() {
     }
   })
 }
+
 init();
-}
 
