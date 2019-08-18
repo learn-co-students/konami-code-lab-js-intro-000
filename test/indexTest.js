@@ -19,7 +19,7 @@ describe("index.js", () => {
     const keyboardEvent = new KeyboardEvent("keydown", { key });
     document.body.dispatchEvent(keyboardEvent);
   }
-  
+
   init()
 
   describe("Konami code", () => {
