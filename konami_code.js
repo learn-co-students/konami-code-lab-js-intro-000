@@ -21,7 +21,7 @@ function init(e) {
     index++;
 
     if (index === codes.length) {
-      alert("You did it successfully!");
+      alert("Congratulatory Message!");
 
       index = 0;
     }
@@ -30,4 +30,4 @@ function init(e) {
   }
 }
 
-document.querySelectorAll('body')[0].addEventListener('keydown', init)
+document.querySelectorAll('html')[0].addEventListener('keydown', init)
