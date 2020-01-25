@@ -11,6 +11,28 @@ const codes = [
   "a"
 ];
 
+let newArr = [];
+
 function init() {
-  // your code here
+  var keyListener = document.body.addEventListener('keydown', compareArrs);
+}
+
+function compareArrs(e) {
+  newArr.push(e.key)
+  for(let i=0; i<newArr.length; i++) {
+    if(newArr[i]!==codes[i]) {
+      if(newArr[i]===codes[0]) {
+        newArr = [newArr[i]];
+        return;
+      } else {
+        newArr = [];
+        return;
+      }
+    } else {
+        continue;
+    }
+  }
+  if(newArr.length===codes.length) {
+    alert("You matched the codes!");
+  }
 }
