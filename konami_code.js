@@ -14,9 +14,9 @@ const codes = [
 function init() {
  let index = 0;
   // Attaching an keydown event listener to document.body
-  document.body.addEventListener("keydown", (event) => {
+  document.body.addEventListener("keydown", (e)=> {
     const key = e.key;
-  if (codes[index] === key) {
+  if (key === codes[index]) {
     index++;
  
     if (index === codes.length) {
@@ -30,18 +30,3 @@ function init() {
   
   });
 }
-
-/*
-document.body.addEventListener('keydown', init);
-
-function init(e) {
-  newCodeArray = [];
-  newCodeArray.push(e);
-  
-  if(codes[i] === newCodeArray[i]){
-    alert("correct order"); 
-  } else {
-    newCodeArray = [];
-  }
-}
-*/
