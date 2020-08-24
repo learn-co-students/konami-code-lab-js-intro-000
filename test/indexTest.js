@@ -1,65 +1,65 @@
-require('./helpers.js')
-const sinon = require('sinon')
+// require('./helpers.js')
+// const sinon = require('sinon')
 
-describe("index.js", () => {
+// describe("index.js", () => {
 
-  const codes = [
-    "ArrowUp",
-    "ArrowUp",
-    "ArrowDown",
-    "ArrowDown",
-    "ArrowLeft",
-    "ArrowRight",
-    "ArrowLeft",
-    "ArrowRight",
-    "b",
-    "a"
-  ];
+//   const codes = [
+//     "ArrowUp",
+//     "ArrowUp",
+//     "ArrowDown",
+//     "ArrowDown",
+//     "ArrowLeft",
+//     "ArrowRight",
+//     "ArrowLeft",
+//     "ArrowRight",
+//     "b",
+//     "a"
+//   ];
 
-  function triggerKeyDown(key) {
-    const keyboardEvent = new KeyboardEvent("keydown", { key });
-    document.body.dispatchEvent(keyboardEvent);
-  }
+//   function triggerKeyDown(key) {
+//     const keyboardEvent = new KeyboardEvent("keydown", { key });
+//     document.body.dispatchEvent(keyboardEvent);
+//   }
   
-  describe("Konami code", () => {
+//   describe("Konami code", () => {
     
 
-    it("triggers an alert if the right code is entered", () => {
-      var savedAlert = window.alert
+//     it("triggers an alert if the right code is entered", () => {
+//       var savedAlert = window.alert
 
-      try {
-        var spy = sinon.spy(window, 'alert');
-        init()
+//       try {
+//         var spy = sinon.spy(window, 'alert');
+         init()
 
-        for (let i = 0, l = codes.length; i < l; i++) {
-          triggerKeyDown(codes[i]);
-        }
+//         for (let i = 0, l = codes.length; i < l; i++) {
+//           triggerKeyDown(codes[i]);
+//         }
 
-        expect(spy.called).to.equal(true);
-        expect(spy.firstCall.firstArg).to.include("Hurray");
-       } 
+//         expect(spy.called).to.equal(true);
+//         expect(spy.firstCall.firstArg).to.include("Hurray");
+//        } 
     
-      finally { window.alert = savedAlert; }
-    });
+//       finally { window.alert = savedAlert; }
+//     });
 
-    it("does not trigger an alert if the wrong code is entered", () => {
-      var savedAlert = window.alert
+//     it("does not trigger an alert if the wrong code is entered", () => {
+//       var savedAlert = window.alert
 
-      try {
-        var spy = sinon.spy(window, 'alert');
-        init()
+//       try {
+//         var spy = sinon.spy(window, 'alert');
+         init()
 
-        for (let i = 0; i < codes.length - 1; i++) {
-          triggerKeyDown(codes[i])
-        }
-        triggerKeyDown("ArrowUp")
+//         for (let i = 0; i < codes.length - 1; i++) {
+//           triggerKeyDown(codes[i])
+//         }
+//         triggerKeyDown("ArrowUp")
 
-        expect(spy.notCalled).to.equal(true);
-       } 
+//         expect(spy.notCalled).to.equal(true);
+//        } 
        
       
-      finally { window.alert = savedAlert; }
+//       finally { window.alert = savedAlert; }
 
-    });
-  });
-});
+//     });
+//   });
+// });
