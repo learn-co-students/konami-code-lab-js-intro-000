@@ -11,6 +11,25 @@ const codes = [
   "a"
 ];
 
+var index = 0;
+
 function init() {
-  // your code here
+  // Attaching an keydown event listener to document.body
+  document.body.addEventListener("keydown", onKeyDownHandler);
+}
+
+function onKeyDownHandler(e) {
+  const key = e.key;
+
+  if (key === codes[index]) {
+    index++;
+
+    if (index === codes.length) {
+      alert("Hurray!");
+
+      index = 0;
+    }
+  } else {
+    index = 0;
+  }
 }
