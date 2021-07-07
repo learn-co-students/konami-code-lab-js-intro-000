@@ -11,6 +11,13 @@ const codes = [
   "a"
 ];
 
+var keystrokes = []
+
 function init() {
-  // your code here
+  document.body.addEventListener('keydown', function(o){
+    for (let i = 0; i < code.length; i++) {
+      keystrokes.push(parseInt(o.detail || o.which))}
+    if (keystrokes == code) {
+      alert("That's the code! Congrats")}
+    })
 }
